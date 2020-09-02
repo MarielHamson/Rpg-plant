@@ -18,15 +18,15 @@ _{This is a detailed description of your application. Its purpose and usage. Giv
 
 _{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
 
-| Behavior                                         | Input                     | Output                                                                                       | Completed(Y/N?) |
-| ------------------------------------------------ | ------------------------- | -------------------------------------------------------------------------------------------- | --------------- |
-| Create plant object with default property values | Sunflower                 | Sunflower {water: 10 seeds: 10, petals: 1}                                                   |
-| Battle with Squirrel                             | Initiate Battle           | Decrement petals by 2 if water is less than 10, increment petals if water is greater than 10 |
-| Plant wilts                                      | N/A                       | 2 seeds are destroyed every second                                                           |
-| Plant grows                                      | User clicks "add seeds"   | 2 seeds are added to the seed property                                                       |
-| Plant water level decreases                      | 2 seconds pass            | Water decreases by 4                                                                         |
-| Plant water increases                            | User clicks "water plant" | water property increases by 2                                                                |
-| New plant added                                  | seed property >= 20       | New plant is created                                                                         |
+| Behavior                                         | Input                     | Output                                                                                                | Completed(Y/N?) |
+| ------------------------------------------------ | ------------------------- | ----------------------------------------------------------------------------------------------------- | --------------- |
+| Create plant object with default property values | Sunflower                 | Sunflower {water: 10 seeds: 10, petals: 1}                                                            |
+| Battle with Squirrel                             | Initiate Battle           | Decrement petals by 2 if water is less than 10, increment petals if water is greater than or equal 10 |
+| Plant wilts                                      | N/A                       | 2 seeds are destroyed every second                                                                    |
+| Plant grows                                      | User clicks "add seeds"   | 2 seeds are added to the seed property                                                                |
+| Plant water level decreases                      | 2 seconds pass            | Water decreases by 4                                                                                  |
+| Plant water increases                            | User clicks "water plant" | water property increases by 2                                                                         |
+| New plant added                                  | seed property >= 20       | New plant is created                                                                                  |
 
 ## Known Bugs
 

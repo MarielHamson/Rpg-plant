@@ -19,4 +19,14 @@ describe('Character', () => {
 			name: 'Sunflower',
 		});
 	});
+
+	test('battle decrements petals by 2', () => {
+		const initialState = { water: 10, seeds: 10, petals: 1 };
+		const plant = character.storeState(initialState);
+		expect(plant(character.battleLost)).toMatchObject({
+			water: 10,
+			seeds: 10,
+			petals: -1,
+		});
+	});
 });

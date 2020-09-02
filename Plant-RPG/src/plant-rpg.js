@@ -16,7 +16,7 @@ export const changeState = (prop) => {
 		});
 	};
 };
-
+//
 export const changeStringState = (prop) => {
 	return (value) => {
 		return (state) => ({
@@ -29,6 +29,11 @@ export const changeStringState = (prop) => {
 const initialState = { water: 10, seeds: 10, petals: 1 };
 const stateControl = storeState(initialState);
 export const assignName = changeStringState('name');
-const plantName = assignName('Sunflower');
-const plantWithName = stateControl(plantName);
+const plantName = assignName('Sunflower'); // changeStringState('name')('Sunflower')
+const plantWithName = stateControl(plantName); //storeState(changeStringState('name')('Sunflower'))
 console.log(plantWithName);
+
+const battleWon = changeState('petals')(1);
+export const battleLost = changeState('petals')(-2);
+
+export const battleWithSquirrel = stateControl(battleLost);
