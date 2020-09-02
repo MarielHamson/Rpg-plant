@@ -28,7 +28,7 @@ export const changeStringState = (prop) => {
 
 const initialState = { water: 10, seeds: 10, petals: 1 };
 const stateControl = storeState(initialState);
-const assignName = changeStringState('name');
+export const assignName = changeStringState('name');
 const plantName = assignName('Sunflower');
 const plantWithName = stateControl(plantName);
 console.log(plantWithName);
