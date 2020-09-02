@@ -29,4 +29,18 @@ describe('Character', () => {
 			petals: -1,
 		});
 	});
+
+	test('battle squirrel', () => {
+		const initialState = { water: 10, seeds: 10, petals: 1 };
+		const plant = character.storeState(initialState);
+		console.log(plant());
+		console.log(plant()['water']);
+		expect(plant(character.battleWithSquirrel(plant()['water']))).toMatchObject(
+			{
+				water: 10,
+				seeds: 10,
+				petals: 2,
+			}
+		);
+	});
 });
