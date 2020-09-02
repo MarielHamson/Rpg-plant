@@ -42,3 +42,20 @@ export const battleWithSquirrel = (water) => {
 		return battleLost;
 	}
 };
+
+const changeSeeds = changeState('seeds')(-2);
+
+export const plantWilts = (state) => {
+	setInterval(() => {
+		state(changeSeeds);
+	}, 1000);
+};
+
+// setHunger() {
+//   let hungerInterval = setInterval(() => {
+//     this.hunger--;
+//     if (this.hunger <= 0) {
+//       clearInterval(hungerInterval);
+//     }
+//   }, 5000);
+// }

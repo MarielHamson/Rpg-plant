@@ -1,6 +1,7 @@
 import * as character from '../src/plant-rpg.js';
 
 describe('Character', () => {
+	jest.useFakeTimers();
 	test('should create new sunflower character', () => {
 		const initialState = { water: 10, seeds: 10, petals: 1 };
 		const plantName = character.storeState(initialState);
@@ -33,8 +34,6 @@ describe('Character', () => {
 	test('battle squirrel', () => {
 		const initialState = { water: 10, seeds: 10, petals: 1 };
 		const plant = character.storeState(initialState);
-		console.log(plant());
-		console.log(plant()['water']);
 		expect(plant(character.battleWithSquirrel(plant()['water']))).toMatchObject(
 			{
 				water: 10,
@@ -42,5 +41,17 @@ describe('Character', () => {
 				petals: 2,
 			}
 		);
+	});
+
+	test('seeds decrement by 2 every 1000ms', () => {
+		const initialState = { water: 10, seeds: 10, petals: 1 };
+		const plant = character.storeState(initialState);
+		character.plantWilts(plant);
+		jest.advanceTimersByTime(1001);
+		expect(plant()).toMatchObject({
+			water: 10,
+			seeds: 8,
+			petals: 1,
+		});
 	});
 });
