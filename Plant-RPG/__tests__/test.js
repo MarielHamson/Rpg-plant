@@ -2,6 +2,11 @@ import * as character from '../src/plant-rpg.js';
 
 describe('Character', () => {
   jest.useFakeTimers();
+
+  afterEach(function() {
+    jest.clearAllTimers();
+  });
+  
   test('should create new sunflower character', () => {
     const initialState = { water: 10, seeds: 10, petals: 1 };
     const plantName = character.storeState(initialState);
@@ -84,5 +89,18 @@ describe('Character', () => {
       seeds: 12, 
       petals: 1,
     });
-  });
+	});
+	
+	test('water decrement by 4 every 2000ms', () => {
+		const initialState = { water: 10, seeds: 10, petals:1 };
+		const plant = character.storeState(initialState);
+		character.waterLevel(plant);
+		jest.advanceTimersByTime(2001);
+		expect(plant()).toMatchObject({
+			water: 6,
+			seeds:10,
+			petals:1
+		});
+	});
+
 });
