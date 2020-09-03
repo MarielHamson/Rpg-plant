@@ -113,4 +113,15 @@ describe('Character', () => {
     });
   });
 
+  test('new plant is created if seeds are over 20', () => {
+    const initialState = { water: 10, seeds: 20, petals: 1 };
+    const plant = character.storeState(initialState);
+    const plant2 = character.newPlant(plant()["seeds"]);
+    expect(plant2()).toMatchObject({
+      water: 5,
+      seeds: 5,
+      petals: 2,
+    });
+  })
+
 });

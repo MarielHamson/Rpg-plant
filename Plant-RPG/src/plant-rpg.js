@@ -27,7 +27,8 @@ export const changeStringState = (prop) => {
 };
 
 // const initialState = { water: 10, seeds: 10, petals: 1 };
-// const stateControl = storeState(initialState);
+const initialState2 = {water: 5, seeds: 5, petals: 2 };
+const plant2 = storeState(initialState2);
 export const assignName = changeStringState('name');
 // const plantName = assignName('Sunflower'); // changeStringState('name')('Sunflower')
 // const plantWithName = stateControl(plantName); //storeState(changeStringState('name')('Sunflower'))
@@ -42,6 +43,14 @@ export const battleWithSquirrel = (water) => {
     return battleLost;
   }
 };
+
+export const newPlant = (seeds) => {
+  if (seeds >= 20) {
+    return storeState(initialState2);
+  } else {
+    return;
+  }
+}
 
 const decreaseSeeds = changeState('seeds')(-2);
 export const increaseSeeds = changeState('seeds')(2);
