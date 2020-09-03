@@ -53,6 +53,7 @@ export const plantWilts = (state) => {
 };
 
 const decreaseWater = changeState('water')(-4);
+export const increaseWater = changeState('water')(2);
 
 export const waterLevel = (state) => {
 	setInterval(() => {

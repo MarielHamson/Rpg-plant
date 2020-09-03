@@ -101,6 +101,16 @@ describe('Character', () => {
 			seeds:10,
 			petals:1
 		});
-	});
+  });
+  
+  test('water increments by 2', () => {
+    const initialState = { water: 10, seeds: 10, petals: 1 };
+    const plant = character.storeState(initialState);
+    expect(plant(character.increaseWater)).toMatchObject({
+      water: 12,
+      seeds: 10,
+      petals: 1,
+    });
+  });
 
 });
