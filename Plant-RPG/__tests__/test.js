@@ -76,4 +76,13 @@ describe('Character', () => {
       petals: 1,
     });
   });
+  test('seeds increment by 2', () => {
+    const initialState = { water: 10, seeds: 10, petals: 1 };
+    const plant = character.storeState(initialState);
+    expect(plant(character.increaseSeeds)).toMatchObject({
+      water: 10,
+      seeds: 12, 
+      petals: 1,
+    });
+  });
 });
