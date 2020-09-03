@@ -26,10 +26,11 @@ export const changeStringState = (prop) => {
   };
 };
 
-// const initialState = { water: 10, seeds: 10, petals: 1 };
+const initialState = { water: 10, seeds: 10, petals: 1 };
 const initialState2 = {water: 5, seeds: 5, petals: 2 };
-const plant2 = storeState(initialState2);
 export const assignName = changeStringState('name');
+export const stateControl = storeState(initialState);
+
 // const plantName = assignName('Sunflower'); // changeStringState('name')('Sunflower')
 // const plantWithName = stateControl(plantName); //storeState(changeStringState('name')('Sunflower'))
 
